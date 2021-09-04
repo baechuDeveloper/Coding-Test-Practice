@@ -1,13 +1,13 @@
 package MST__Minimm_Spanning_Tree;
 import java.util.*;
 import java.io.*;
-//¹®Á¦ ÀÚÃ¼°¡ Àß¸øµÈ ¹®Á¦ - ¸î¹ø °¥¾ÆÅº '°³¼ö'°¡ ¾Æ´Ï¶ó ¸î 'Á¾·ù'ÀÇ ºñÇà±â¸¦ ÅÀ´Â°¡ ¹°¾îº¸°í ÀÖ´Ù. ±×¸®°í ÀÌ°Ç ¿¬°á±×·¡ÇÁ°¡ ÁÖ¾îÁ³´Ù. ¾¾¹ß
-//¿¬°á±×·¡ÇÁ¶ó°í ¾Æ½Ã³ª¿ä? ¾î´Â Á¤Á¡ÀÌ¶óµµ ±× Á¤Á¡À¸·Î °¥ ±æÀÌ Á¸ÀçÇÏ°Ô µÇ´Â ±×·¡ÇÁÀÔ´Ï´Ù. ¹Ý´ë¸»ÀÌ ºñ¿¬°á±×·¡ÇÁ¶ó°í ´Ù¸¥ Á¤Á¡À¸·Î °¡Áö ¸øÇÏ´Â °æ¿ì°¡ »ý±â´Â ±×·¡ÇÁÀÔ´Ï´Ù.
-//¿ÏÀü±×·¡ÇÁ¶ó°í ¾Æ½Ã³ª¿ä? Á¤¸» ¸ðµç ²ÀÁöÁ¡¿¡ ´ëÇØ ¸ðµç ¿¬°áÀÌ Á¸ÀçÇÕ´Ï´Ù.
-/*½ÅÀåÆ®¸®°¡ À¯¿ëÇÑ ÀÌÀ¯´Â '¾î¶°ÇÑ ±×·¡ÇÁ'¿¡¼­ '°¡Àå ÀûÀº °³¼öÀÇ °£¼±À¸·Î ¸ðµç Á¤Á¡ÀÇ ¿¬°áÀÌ µÇ´Â Æ®¸®'¸¦ »Ì¾ÆÁØ °ÍÀÌ±â¿¡ 
- *ÀÌ¸¦ ÀÌ¿ëÇØ¼­ '¿Õº¹'¿¡ ÇÊ¿äÇÑ Áß¿äÇÑ Á¤º¸µµ Á¦°øÇØÁØ´Ù.*/
+//ë¬¸ì œ ìžì²´ê°€ ìž˜ëª»ëœ ë¬¸ì œ - ëª‡ë²ˆ ê°ˆì•„íƒ„ 'ê°œìˆ˜'ê°€ ì•„ë‹ˆë¼ ëª‡ 'ì¢…ë¥˜'ì˜ ë¹„í–‰ê¸°ë¥¼ íƒ”ëŠ”ê°€ ë¬¼ì–´ë³´ê³  ìžˆë‹¤. ê·¸ë¦¬ê³  ì´ê±´ ì—°ê²°ê·¸ëž˜í”„ê°€ ì£¼ì–´ì¡Œë‹¤.
+//ì—°ê²°ê·¸ëž˜í”„ë¼ê³  ì•„ì‹œë‚˜ìš”? ì–´ëŠ” ì •ì ì´ë¼ë„ ê·¸ ì •ì ìœ¼ë¡œ ê°ˆ ê¸¸ì´ ì¡´ìž¬í•˜ê²Œ ë˜ëŠ” ê·¸ëž˜í”„ìž…ë‹ˆë‹¤. ë°˜ëŒ€ë§ì´ ë¹„ì—°ê²°ê·¸ëž˜í”„ë¼ê³  ë‹¤ë¥¸ ì •ì ìœ¼ë¡œ ê°€ì§€ ëª»í•˜ëŠ” ê²½ìš°ê°€ ìƒê¸°ëŠ” ê·¸ëž˜í”„ìž…ë‹ˆë‹¤.
+//ì™„ì „ê·¸ëž˜í”„ë¼ê³  ì•„ì‹œë‚˜ìš”? ì •ë§ ëª¨ë“  ê¼­ì§€ì ì— ëŒ€í•´ ëª¨ë“  ì—°ê²°ì´ ì¡´ìž¬í•©ë‹ˆë‹¤.
+/*ì‹ ìž¥íŠ¸ë¦¬ê°€ ìœ ìš©í•œ ì´ìœ ëŠ” 'ì–´ë– í•œ ê·¸ëž˜í”„'ì—ì„œ 'ê°€ìž¥ ì ì€ ê°œìˆ˜ì˜ ê°„ì„ ìœ¼ë¡œ ëª¨ë“  ì •ì ì˜ ì—°ê²°ì´ ë˜ëŠ” íŠ¸ë¦¬'ë¥¼ ë½‘ì•„ì¤€ ê²ƒì´ê¸°ì— 
+ *ì´ë¥¼ ì´ìš©í•´ì„œ 'ì™•ë³µ'ì— í•„ìš”í•œ ì¤‘ìš”í•œ ì •ë³´ë„ ì œê³µí•´ì¤€ë‹¤.*/
 
-//9372¹ø - »ó±ÙÀÌÀÇ ¿©Çà 
+//9372ë²ˆ - ìƒê·¼ì´ì˜ ì—¬í–‰ 
 public class p1__Sanggen_Travel {
 	static int N, M;
 	static ArrayList< ArrayList<Integer> > childList;
@@ -32,11 +32,11 @@ public class p1__Sanggen_Travel {
 				 childList.get(b).add(a);
 			}
 			
-			System.out.println(N-1); //°á±¹¿¡ Æ®¸®·Î¼­ ¸ðµç Á¤Á¡À» °¥°Å¸é Æ®¸®ÀÇ °£¼±ÀÇ 'Á¾·ù'¸¸Å­¸¸ ÁÖ¸é µÈ´Ù.
+			System.out.println(N-1); //ê²°êµ­ì— íŠ¸ë¦¬ë¡œì„œ ëª¨ë“  ì •ì ì„ ê°ˆê±°ë©´ íŠ¸ë¦¬ì˜ ê°„ì„ ì˜ 'ì¢…ë¥˜'ë§Œí¼ë§Œ ì£¼ë©´ ëœë‹¤.
 			
 			
 			
-			//»ç½Ç ¾Æ·¡ ¹æ¹ýÀº Á÷°üÀûÀÎ°ÍÀº ¾Æ´Ï´Ù. ±×·±µ¥ ¾¾¹ß³ð ¹®Á¦ ÀÚÃ¼°¡ °³ ¾¾¹ß³ð. ³¬ÀÌÁö¸»ÀÚ °³»öÈ÷ ¹«½ÄÇÑ»öÈ÷
+			//ì‚¬ì‹¤ ì•„ëž˜ ë°©ë²•ì€ ì§ê´€ì ì¸ê²ƒì€ ì•„ë‹ˆë‹¤. ë¬´ì‹í•œ ë†ˆ ã… ã… 
 			/*boolean[] visit = new boolean[N+1];
 			int result = 0;
 			Queue<Integer> q = new LinkedList<>();
